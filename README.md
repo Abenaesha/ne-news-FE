@@ -6,34 +6,28 @@ Northcoders News has articles which are divided into topics. Each article has us
 Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which
 they have added.
 
+This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
+
 ### Objectives
-1. Pull together all the skills and technologies you have learnt over the past three weeks.
-2. Learn about working with a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
-3. Make more advanced asynchronous API calls.
-4. Begin to familiarise yourself with the various HTTP response codes and update your UI accordingly.
-5. Learn more common HTTP request types `POST`, `PUT` & `DELETE`
-6. Learn more about interacting with a server using URL queries and request bodies.
+1. Pull together all the front-end skills, technologies and best practises you have learnt over the past three weeks.
+2. Make asynchronous API calls to your own server.
+4. Use HTTP request types to interact with your backend, and HTTP response codes to update your UI accordingly.
 
-You will be getting the data from your implementation of the Northcoders News API server.
+### What to do
 
-### Stages
+Use the generic react-project-checklist as a guide to setting up your app. Here are some project-specific things to bear in mind:
 
 1. Have a look at your API endpoints and at Reddit. Think about what data you have available, and how you will structure your application. What routes will your application have? What articles will you choose to display on the main page?
 
-2. Set up your routing with React Router. Render dummy components and make sure they are rendering in the right place (with hard-coded data).
+2. Think how you will isolate the concerns of your project - the structure of your components, the sourcing of your data, the styling.
 
-3. Think about what data each component will need. Where will it come from? Will any components need to pass data down to dumb components as props? Focus on loading a list of articles for your front page first of all.
+3. What sort of routing does Reddit use? What sort of specificity do you think you will need? Remember, your urls don't have to directly correspond to your api endpoints, but they will provide some guidance.
 
-4. Consider more complex functionality. You should be able to post a new comment on a topic. NB all comments you post from your app will automatically have the username 'northcoder'. Consider whether the comments will appear in order of popularity or by time.
+4. Think about what data each component will need. Where will it come from? When should components find their own data and when should they load it themselves? Focus on loading a list of articles for your front page first of all.
 
-5. You should also be able to delete comments that you have posted. If you try to delete a comment that does not have the author 'northcoder' the API throws an error.
+5. Consider more complex functionality: how do you want to allow changes to your database? Think about how you will attribute users to posted comments etc. How will you know what comments/articles a user should be allowed to delete? How about sorting data, or paginating responses?
 
-6. Each comment, and each article, can be upvoted or downvoted. See the [API reference](https://northcoders-news-api.herokuapp.com/) which explains how to to this.
-
-### Users
-
-Users are available from the API and have already been busy adding comments to the articles!
-There is also a 'northcoder' user. Any comments you add will belong to the 'northcoder' user and you will also be able to delete those comments using the API.
+6. How are you going to make this a fluid and engaging experience for users, so they want to come back for more?
 
 ### Extra credit
 
@@ -44,5 +38,3 @@ There is also a 'northcoder' user. Any comments you add will belong to the 'nort
 ### Important
 
 This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :)
-
-You may use your own API or the one provided above. Start with yours and if you run into problems you can switch to ours (you should only have to change the URL). There's no point in spending a lot of time fixing your server, focus on the front-end.
