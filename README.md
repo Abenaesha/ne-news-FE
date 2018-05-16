@@ -1,10 +1,8 @@
 ## Northcoders News
 
-Northcoders News is a social news aggregation, web content rating, and discussion website. It is similar to [Reddit](https://www.reddit.com/)
+Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of [Reddit](https://www.reddit.com/).
 
-Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API.
-Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which
-they have added.
+Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
 This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
 
