@@ -7,7 +7,7 @@ Northcoders News has articles which are divided into topics. Each article has us
 This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
 
 ### Objectives
-1. Pull together all the front-end skills, technologies and best practises you have learnt over the past three weeks.
+1. Pull together all the front-end skills, technologies and best practises you have learnt.
 2. Make asynchronous API calls to your own server.
 4. Use HTTP request types to interact with your backend, and HTTP response codes to update your UI accordingly.
 
