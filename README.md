@@ -46,7 +46,7 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 12. **As a logged in user, I should be able to vote on an article.**
 13. **As a logged in user, I should be able to vote on a comment.**
 14. **As a logged in user, I should be able to delete my own articles.**
-15. **As a logged in user, I should be able to delete my own articles.**
+15. **As a logged in user, I should be able to delete my own comments.**
 16. **As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).**
 17. **As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).**
 18. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
