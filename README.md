@@ -54,7 +54,7 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 20. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
 21. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
 
-**Note:**
+*Note regarding **BOLD** user stories:*
 - Infinite scroll / pagination to be covered in Tuesday's lecture
 - User login / auth to be covered in Tuesday's lecture
 - Voting / optimistic rendering to be covered in Wednesday's lecture
