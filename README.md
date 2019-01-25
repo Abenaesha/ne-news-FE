@@ -60,6 +60,10 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 - Voting / optimistic rendering to be covered in Wednesday's lecture
 - Error handling / error pages to be covered in Thursday's lecture
 
+### Deployment
+
+We will send out some notes, but have a look at this section of the `create-react-app` docs on how to deploy your app using Netlify: https://facebook.github.io/create-react-app/docs/deployment#netlify-https-wwwnetlifycom
+
 **Before moving onto the extra credit section, submit your code for review! Please send a link to both your GitHub project and your hosted version to the FE2 slack channel** 😀
 
 ### Extra credit
