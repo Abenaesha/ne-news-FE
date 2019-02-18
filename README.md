@@ -29,8 +29,8 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 
 ### 'Must Have' User Stories
 
-1. As a user, I should be able to view a list of articles.
-2. As a user, I should be able to view a list of articles on a specific topic.
+1. As a user, I should be able to view a list of all articles.
+2. As a user, I should be able to view a list of all articles on a specific topic.
 3. As a user, I should be able to view an individual article.
 4. As a user, I should be able to view an individual article's comments.
 5. As a user, I should be able to sort articles by: 
@@ -47,18 +47,22 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 13. **As a logged in user, I should be able to vote on a comment.**
 14. **As a logged in user, I should be able to delete my own articles.**
 15. **As a logged in user, I should be able to delete my own comments.**
-16. **As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).**
-17. **As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).**
-18. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
-19. As a hiring parter, I should be able to find a link to the hosted version of the project in the readme.
-20. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
-21. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
+16. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
+17. As a hiring parter, I should be able to find a link to the hosted version of the project in the readme.
+18. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
+19. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
+
+_**If time...**_
+20. **As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).**
+21. **As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).**
+22. As a user, I should be able to view a list of all articles written by a specific user.
 
 *Note regarding **BOLD** user stories:*
 - Infinite scroll / pagination to be covered in Tuesday's lecture
 - User login / auth to be covered in Tuesday's lecture
 - Voting / optimistic rendering to be covered in Wednesday's lecture
 - Error handling / error pages to be covered in Thursday's lecture
+
 
 ### Deployment
 
