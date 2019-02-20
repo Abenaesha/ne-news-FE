@@ -53,22 +53,23 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 19. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
 
 _**If time...**_
+
 20. **As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).**
 21. **As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).**
 22. As a user, I should be able to view a list of all articles written by a specific user.
 
 *Note regarding **BOLD** user stories:*
-- Infinite scroll / pagination to be covered in Tuesday's lecture
 - User login / auth to be covered in Tuesday's lecture
 - Voting / optimistic rendering to be covered in Wednesday's lecture
 - Error handling / error pages to be covered in Thursday's lecture
+- Infinite scroll / pagination to be covered in Thursday's lecture
 
 
 ### Deployment
 
 We will send out some notes, but have a look at this section of the `create-react-app` docs on how to deploy your app using Netlify: https://facebook.github.io/create-react-app/docs/deployment#netlify-https-wwwnetlifycom
 
-**Before moving onto the extra credit section, submit your code for review! Please send a link to both your GitHub project and your hosted version to the FE2 slack channel** 😀
+**Before moving onto the 'if time' and 'extra credit' sections, submit your code for review! Please send a link to both your GitHub project and your hosted version to the FE2 slack channel** 😀
 
 ### Extra credit
 
