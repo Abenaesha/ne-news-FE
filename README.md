@@ -9,9 +9,10 @@ Northcoders News has articles which are divided into topics. Each article has us
 This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
 
 ### Objectives
+
 1. Pull together all the front-end skills, technologies and best practises you have learnt.
 2. Make asynchronous API calls to your own server.
-4. Use HTTP request types to interact with your backend, and HTTP response codes to update your UI accordingly.
+3. Use HTTP request types to interact with your backend, and HTTP response codes to update your UI accordingly.
 
 ### What to do
 
@@ -29,43 +30,40 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 
 6. How are you going to make this a fluid and engaging experience for users, so they want to come back for more?
 
+_Note: You will come across a Cross-Origin-Resource-Sharing error once you start fetching data from your back-end API, which will need a slight update: [Express CORS Middleware](https://expressjs.com/en/resources/middleware/cors.html)_
+
 ### 'Must Have' User Stories
 
+You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
+
 1. As a user, I should be able to view a list of all articles.
-2. As a user, I should be able to view a list of all articles on a specific topic.
+2. As a user, I should be able to view for each topic with a list of related articles.
 3. As a user, I should be able to view an individual article.
 4. As a user, I should be able to view an individual article's comments.
-5. As a user, I should be able to sort articles by: 
+5. As a hiring partner with no access to my laptop, I should be able to use the site on my mobile without sacrificing style or functionality.
+6. As a user, I should be able to login to the site.
+7. As a hiring partner with no knowledge of the users in the database, it should be very clear to me how I can login to the site.
+8. As a logged in user, I should be able to log out.
+9. As a logged in user, I should be able to post a new comment to an existing article.
+10. As a logged in user, I should be able to delete my own comments.
+11. As a logged in user, I should be able to vote on an article and immediately see the change.
+12. As a logged in user, I should be able to vote on a comment and immediately see the change.
+13. As a user, I should be able to sort articles by:
     - date created
     - comment_count
     - votes
-6. As a hiring partner with no access to my laptop, I should be able to use the site on my mobile without sacrificing style or functionality.
-7. **As a user, I should be able to login to the site.**
-8. **As a hiring partner with no knowledge of the users in the database, it should be very clear to me how I can login to the site.**
-9. As a logged in user, I should be able to post a new article to an existing topic.
-10. As a logged in user, I should be able to post a new article to a new topic.
-11. As a logged in user, I should be able to post a new comment to an existing article.
-12. **As a logged in user, I should be able to vote on an article.**
-13. **As a logged in user, I should be able to vote on a comment.**
-14. As a logged in user, I should be able to delete my own articles.
-15. As a logged in user, I should be able to delete my own comments.
-16. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
-17. As a hiring parter, I should be able to find a link to the hosted version of the project in the readme.
-18. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
-19. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
+14. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
+15. As a hiring parter, I should be able to find a link to the hosted version of the project in the readme.
+16. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
+17. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
 
-_**If time...**_
+_**If time, and if you have implemented it in your back-end API...**_
 
-20. **As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).**
-21. **As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).**
-22. As a user, I should be able to view a list of all articles written by a specific user.
-
-*Note regarding **BOLD** user stories:*
-- User login / auth to be covered in Tuesday's lecture
-- Voting / optimistic rendering to be covered in Wednesday's lecture
-- Error handling / error pages to be covered in Thursday's lecture
-- Infinite scroll / pagination to be covered in Thursday's lecture
-
+18. As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).
+19. As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).
+20. As a user, I should be able to view a list of all articles written by a specific user.
+21. As a logged in user, I should be able to post a new article to an existing topic.
+22. As a logged in user, I should be able to delete my own articles.
 
 ### Deployment
 
@@ -77,9 +75,8 @@ Or see the `netlify-deployment.md` file in this repo 😎
 
 ### Extra credit
 
-1. Create a route which shows which users have been most active adding articles and comments
-2. Make this route sort the users by how popular they are based on an aggregation of their article and comment vote counts
-3. Implement a filter which re-orders comments based on either the time they were added, or how many votes they have got.
+1. As a user, I should be able to see which users have been most active adding articles and comments
+2. As a user, I should be able to sort the users by how popular they are based on an aggregation of their article and comment vote counts
 
 ### Important
 
