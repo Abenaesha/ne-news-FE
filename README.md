@@ -37,7 +37,7 @@ _Note: You will come across a Cross-Origin-Resource-Sharing error once you start
 You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
 
 1. As a user, I should be able to view a list of all articles.
-2. As a user, I should be able to view for each topic with a list of related articles.
+2. As a user, I should be able to view a page for each topic with a list of related articles.
 3. As a user, I should be able to view an individual article.
 4. As a user, I should be able to view an individual article's comments.
 5. As a hiring partner with no access to my laptop, I should be able to use the site on my mobile without sacrificing style or functionality.
