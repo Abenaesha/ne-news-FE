@@ -36,34 +36,54 @@ _Note: You will come across a Cross-Origin-Resource-Sharing error once you start
 
 You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
 
-1. As a user, I should be able to view a list of all articles.
-2. As a user, I should be able to view a page for each topic with a list of related articles.
-3. As a user, I should be able to view an individual article.
-4. As a user, I should be able to view an individual article's comments.
-5. As a hiring partner with no access to my laptop, I should be able to use the site on my mobile without sacrificing style or functionality.
-6. As a user, I should be able to login to the site.
-7. As a hiring partner with no knowledge of the users in the database, it should be very clear to me how I can login to the site.
-8. As a logged in user, I should be able to log out.
-9. As a logged in user, I should be able to post a new comment to an existing article.
-10. As a logged in user, I should be able to delete my own comments.
-11. As a logged in user, I should be able to vote on an article and immediately see the change.
-12. As a logged in user, I should be able to vote on a comment and immediately see the change.
-13. As a user, I should be able to sort articles by:
-    - date created
-    - comment_count
-    - votes
-14. As a hiring parter, I should be able to follow the readme instructions to easily run the project locally.
-15. As a hiring parter, I should be able to find a link to the hosted version of the project in the readme.
-16. As a hiring parter, I should be able to find a link to the back-end repository of the project in the readme.
-17. As a hiring parter, I should be able to find a link to the hosted version of the back-end project in the readme.
 
-_**If time, and if you have implemented it in your back-end API...**_
+**As a user, I should be able to...**
 
-18. As a user, I should be able to navigate over pages of articles (e.g. using pagination or infinite scroll).
-19. As a user, I should be able to navigate over pages of comments (e.g. using pagination or infinite scroll).
-20. As a user, I should be able to view a list of all articles written by a specific user.
-21. As a logged in user, I should be able to post a new article to an existing topic.
-22. As a logged in user, I should be able to delete my own articles.
+1. view a list of all articles
+2. view a page for each topic with a list of related articles.
+3. view an individual article.
+4. view an individual article's comments.
+5. log-in to the site.
+6. sort articles by:
+   - date created
+   - comment_count
+   - votes
+
+**As a logged-in user, I should be able to...**
+
+7. log out.
+8. post a new comment to an existing article.
+9. delete my own comments.
+10. vote on an article and immediately see the change.
+11. vote on a comment and immediately see the change.
+
+**As a hiring partner, I should be able to...**
+
+12. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
+13. log-in clearly with a suggested or default user (as I have no knowledge of the users in the database)
+14. follow the readme instructions to easily run the project locally.
+15. find a link to the hosted version of the project in the readme.
+16. find a link to the back-end repository of the project in the readme.
+17. find a link to the hosted version of the back-end project in the readme.
+
+**Error-handling: As a user, I should...**
+
+18. be directed to a 404 page if I go on a non-existent path/a path for a non-existent article
+19. not be allowed to post an article if I have not filled in all of the form boxes.
+20. not be able to log in with a non-existent username.
+
+### _If time, and if you have implemented it in your back-end API..._
+
+**As a user, I should be able to...**
+
+21. navigate over pages of articles (e.g. using pagination or infinite scroll).
+22. navigate over pages of comments (e.g. using pagination or infinite scroll).
+23. view a list of all articles written by a specific user.
+
+**As a logged-in user, I should be able to...**
+
+24. post a new article to an existing topic.
+25. delete my own articles.
 
 ### Deployment
 
