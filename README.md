@@ -1,6 +1,6 @@
 ## Northcoders News
 
-> ALERT! Please **create your own repo** for NC News to avoid later issues with deploying and git histories.
+> ALERT! Please **create your own empty repo** for NC News to avoid later issues with deploying and git histories. You should then use `create-react-app` and set the git remote using `git remote set-url origin your.new.git.url/here`.
 
 Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of [Reddit](https://www.reddit.com/).
 
@@ -36,54 +36,44 @@ _Note: You will come across a Cross-Origin-Resource-Sharing error once you start
 
 You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
 
-
 **As a user, I should be able to...**
 
 1. view a list of all articles
 2. view a page for each topic with a list of related articles.
 3. view an individual article.
 4. view an individual article's comments.
-5. log-in to the site.
-6. sort articles by:
+5. sort articles by:
    - date created
    - comment_count
    - votes
-
-**As a logged-in user, I should be able to...**
-
-7. log out.
-8. post a new comment to an existing article.
-9. delete my own comments.
-10. vote on an article and immediately see the change.
-11. vote on a comment and immediately see the change.
+6. post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
+7. delete my own comments (as a default logged in user. e.g. 'jessjelly').
+8. vote on an article and immediately see the change.
+9. vote on a comment and immediately see the change.
 
 **As a hiring partner, I should be able to...**
 
-12. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
-13. log-in clearly with a suggested or default user (as I have no knowledge of the users in the database)
-14. follow the readme instructions to easily run the project locally.
-15. find a link to the hosted version of the project in the readme.
-16. find a link to the back-end repository of the project in the readme.
-17. find a link to the hosted version of the back-end project in the readme.
+10. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
+11. follow the readme instructions to easily run the project locally.
+12. find a link to the hosted version of the project in the readme.
+13. find a link to the back-end repository of the project in the readme.
+14. find a link to the hosted version of the back-end project in the readme.
 
 **Error-handling: As a user, I should...**
 
-18. be directed to a 404 page if I go on a non-existent path/a path for a non-existent article
-19. not be allowed to post an article if I have not filled in all of the form boxes.
-20. not be able to log in with a non-existent username.
+15. show a 404 error if I go on a non-existent path/a path for a non-existent article/topic.
+16. show a 400 error if I go on a invalid article ID.
+17. not be allowed to post a comment if I have not filled in all of the form boxes.
 
 ### _If time, and if you have implemented it in your back-end API..._
 
 **As a user, I should be able to...**
 
-21. navigate over pages of articles (e.g. using pagination or infinite scroll).
-22. navigate over pages of comments (e.g. using pagination or infinite scroll).
-23. view a list of all articles written by a specific user.
-
-**As a logged-in user, I should be able to...**
-
-24. post a new article to an existing topic.
-25. delete my own articles.
+18. navigate over pages of articles (e.g. using pagination or infinite scroll).
+19. navigate over pages of comments (e.g. using pagination or infinite scroll).
+20. view a list of all articles written by a specific user.
+21. post a new article to an existing topic.
+22. delete my own articles.
 
 ### Deployment
 
@@ -100,4 +90,4 @@ Or see the [netlify-deployment.md file](netlify-deployment.md) in this repo 😎
 
 ### Important
 
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :)
+This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
