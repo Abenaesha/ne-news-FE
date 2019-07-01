@@ -30,7 +30,7 @@ Take a look inside - but don't change anything.
 
 `npm install netlify-cli -g`
 
-## Deploy a Draft Version
+## Deploy to a Draft URL
 
 `netlify deploy`
 
@@ -49,4 +49,22 @@ Test it out, make sure that everything is working as expected.
 Specify your build path again.
 This will deploy the site to your actual url: `https://your-site-name.netlify.com`.
 
-## Relax
+## Redeployment
+
+1. Create an updated build version of your code:
+
+```bash
+npm run build
+```
+
+2. Deploy to a draft url:
+
+```bash
+netlify deploy
+```
+
+3. Deploy to your production url:
+
+```bash
+netlify deploy --prod
+```
