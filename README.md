@@ -75,7 +75,7 @@ Have a look at this section of the `create-react-app` docs on how to deploy your
 
 Or see the [netlify-deployment.md file](netlify-deployment.md) in this repo 😎
 
-**Before moving onto the 'if time' and 'extra credit' sections, submit your code for review! Please send a link to both your GitHub project and your hosted version to the FE2 slack channel** 😀
+**Before moving onto the 'if time' and 'extra credit' sections, submit your code for review! Please send a link to both your GitHub project and your hosted version to the Front-End slack channel** 😀
 
 ## Extra credit
 
