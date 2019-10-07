@@ -8,6 +8,8 @@ Northcoders News has articles which are divided into topics. Each article has us
 
 This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
 
+ _Note: You will come across a Cross-Origin-Resource-Sharing error once you start fetching data from your back-end API, which will need a slight update: [Express CORS Middleware](https://expressjs.com/en/resources/middleware/cors.html)_
+
 ## Objectives
 
 1. Pull together all the front-end skills, technologies and best practises you have learnt.
@@ -24,7 +26,6 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 4. Think about what data each component will need. Where will it come from? When should components find their own data and when should they load it themselves? Focus on loading a list of articles for your front page first of all.
 5. Consider more complex functionality: how do you want to allow changes to your database? Think about how you will attribute users to posted comments etc. How will you know what comments/articles a user should be allowed to delete? How about sorting data, or paginating responses? A good starting point would be to pick a single user and assuming that all new articles and comments are being posted by that user.
 6. How are you going to make this a fluid and engaging experience for users, so they want to come back for more?
-   _Note: You will come across a Cross-Origin-Resource-Sharing error once you start fetching data from your back-end API, which will need a slight update: [Express CORS Middleware](https://expressjs.com/en/resources/middleware/cors.html)_
 
 ## 'Must Have' User Stories
 
