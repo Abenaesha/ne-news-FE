@@ -60,6 +60,7 @@ npm run build
 2. Deploy to a draft url:
 
 ```bash
+cd ./build
 netlify deploy
 ```
 
