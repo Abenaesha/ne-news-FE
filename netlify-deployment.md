@@ -32,7 +32,10 @@ Take a look inside - but don't change anything.
 
 ## Deploy to a Draft URL
 
-`netlify deploy`
+```bash
+cd ./build
+netlify deploy
+```
 
 - Authorise Netlify with GitHub, following the prompts in the browser.
 - Select `Create & configure a new site`.
