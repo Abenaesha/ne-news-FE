@@ -41,7 +41,7 @@ netlify deploy
 - Select `Create & configure a new site`.
 - Provide your choice of site name.
 - Select your personal account.
-- Provide a deploy path. This needs to point to your build directory and should be `./build`.
+- Provide a deploy path. This needs to point to your build directory and should be `.` (as we're already in the build directory).
 
 Your draft version should now be deployed on a url, e.g. `https://5c13ab16055b9be1725868e6--your-site-name.netlify.com`.
 Test it out, make sure that everything is working as expected.
