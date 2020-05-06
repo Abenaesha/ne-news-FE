@@ -31,6 +31,8 @@ Use the generic react-project-checklist as a guide to setting up your app. Here 
 
 You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
 
+**Before moving onto the 'if time' and 'extra credit' sections of this readme, follow go to the Deployment section bellow, and then submit your code for review! Please send a link to both your GitHub project repository and your hosted website to your reviewer** 😀
+
 **As a user, I should be able to...**
 
 1. view a list of all articles
@@ -46,19 +48,19 @@ You should implement the following functionality in your website. Check the lect
 8. vote on an article and immediately see the change.
 9. vote on a comment and immediately see the change.
 
-**As a hiring partner, I should be able to...**
-
-10. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
-11. follow the readme instructions to easily run the project locally.
-12. find a link to the hosted version of the project in the readme.
-13. find a link to the back-end repository of the project in the readme.
-14. find a link to the hosted version of the back-end project in the readme.
-
 **Error-handling: As a user, I should...**
 
-15. show a 404 error if I go on a non-existent path/a path for a non-existent article/topic.
-16. show a 400 error if I go on a invalid article ID.
-17. not be allowed to post a comment if I have not filled in all of the form boxes.
+10. see a 404 error if I go on a non-existent path/a path for a non-existent article/topic.
+11. see a 400 error if I go on a invalid article ID.
+12. not be allowed to post a comment if I have not filled in all of the form boxes.
+
+**As a hiring partner, I should be able to...**
+
+13. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
+14. follow the readme instructions to easily run the project locally.
+15. find a link to the hosted version of the project in the readme. (use a placeholder if not yet hosted!)
+16. find a link to the back-end repository of the project in the readme.
+17. find a link to the hosted version of the back-end project in the readme.
 
 ## _If time, and if you have implemented it in your back-end API..._
 
@@ -66,7 +68,7 @@ You should implement the following functionality in your website. Check the lect
 
 18. navigate over pages of articles (e.g. using pagination or infinite scroll).
 19. navigate over pages of comments (e.g. using pagination or infinite scroll).
-20. view a list of all articles written by a specific user.
+20. view a list of all articles written by any specific user.
 21. post a new article to an existing topic.
 22. delete my own articles.
 
@@ -76,9 +78,7 @@ There are many ways to deploy a React application. The `create-react-app` docs g
 
 We recommend Netlify. Check out the `netlify-deployment.md` file in this repo for a step-by-step guide!
 
-**Before moving onto the 'if time' and 'extra credit' sections, submit your code for review! Please send a link to both your GitHub project and your hosted version to the Front-End slack channel** 😀
-
-## Extra credit
+## Extra credit - what else do you think would be good for a user to be able to do, here are a couple of suggestions:
 
 1. As a user, I should be able to see which users have been most active adding articles and comments
 2. As a user, I should be able to sort the users by how popular they are based on an aggregation of their article and comment vote counts
