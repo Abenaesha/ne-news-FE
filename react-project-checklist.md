@@ -27,7 +27,6 @@ Here's a guide to approaching any React project. It's not an absolutely strict s
 - Check everything is hooked up
     - you may want to add positional styling here to match your planned layout. DO NOT do any cosmetic styling yet!
 - Write static render methods with mock data
-- Add expected propTypes (adapt this as necessary)
 
 ## Dynamic (order may be a bit looser here!)
 - Create .api file
