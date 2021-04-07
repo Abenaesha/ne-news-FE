@@ -1,8 +1,54 @@
 .App {
   text-align: center;
+  border: 4px solid purple;
+  display: grid;
+  grid-template: 1fr 50px 30fr / 1fr;
+  grid-template-areas: 
+  'header'
+  'nav'
+  'body';
 }
 
-.App-logo {
+.Header {
+  border: 4px solid pink;
+  grid-area: header;
+  
+}
+
+.Navbar {
+  border: 4px solid red;
+  grid-area: nav;
+}
+.Navbar a {
+  padding: 20px;
+  justify-content: space-evenly;
+}
+
+.Body {
+  border: 4px solid orange;
+  grid-area: body;
+  list-style: none;
+}
+
+.Body li {
+  list-style: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .App {
+    grid-template: 2fr 50fr/ 1fr 2fr;
+    grid-template-areas:
+    'header header'
+    'nav body';
+  }
+
+  .Navbar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +81,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
