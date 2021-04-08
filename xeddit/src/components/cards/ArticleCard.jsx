@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import Votes from '../Votes';
 
-function ArticleCard(props) {
+function ArticleCard( props ) {
+    console.log(props)
     const data = new Date(props.created_at);
     let bodyLen = props.body;
     if (bodyLen.length > 50) {
@@ -10,24 +12,29 @@ function ArticleCard(props) {
     }
 
     return (
-        <li>
-            <p className='topic'>{props.topic}</p>
-            <Link to={`/articles/${props.article_id}`}>
-                <h3 className='title'>{props.title}</h3>
-            </Link>
-            <p>{data.toLocaleString()}</p>
-            <Link to={`/articles/${props.article_id}`}>
-                <p className='bodyLen'>{bodyLen}</p>
-            </Link>
+        <li className='article-card'>
+            <Link
+        to={`/articles/topic/${props.topic}`}
+        className="topic"
+      >
+        {(props.topic).toUpperCase()}
+      </Link>
+      <Link
+        className="title"
+        to={`/articles/${props.article_id}`}
+      >
+        <h3>{props.title}</h3>
+      </Link>
+            <p className='data'>{data.toLocaleString()}</p>
+            <p className='boduLen'>{bodyLen}</p>
             <p>
                 By:
                 <Link to={`/users/${props.author}/articles`} className='author'>
-                    {props.author}                
+                    
+                    {props.author}
                 </Link>
             </p>
-            <button className="vote-button up">UP</button>
-            <button className="vote-button down">DOWN</button>
-            <p className="votes">{props.votes} Votes</p>
+            <Votes id={props.article_id} votes={props.votes} type='articles'/>
             <Link to={`/${props.article_id}/comments`}>
                 {props.comment_count} Comments
             </Link>

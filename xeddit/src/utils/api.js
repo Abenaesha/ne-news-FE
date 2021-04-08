@@ -10,9 +10,21 @@ export const fetchTopics = () => {
     })
 }
 
-export const fetchArticles = (topic, author, sort_by, order) => {
+export const fetchUsers = () => {
+    return request.get( '/users' ).then( ( { data: { users } } ) => {
+        return users;
+    })
+}
+
+export const fetchUserByUsername = ( username ) => {
+    return request.get( `/users/${ username }` ).then( ( { data: { username } } ) => {
+        return username;
+    })
+}
+
+export const fetchArticles = (topic, author, sort_by, order, p) => {
     return request
-    .get('/articles', { params: { topic, author, sort_by, order } })
+    .get('/articles', { params: { topic, author, sort_by, order, p } })
     .then(({ data: { articles } }) => {
         return articles;
     })
@@ -31,7 +43,22 @@ export const fetchCommentsByArticleId = (article_id) => {
     })
 }
 
-export const updateArtVotes = (article_id, vote_count) => {
-    return request.patch(`/articles/${article_id}`, { inc_votes: vote_count })
-    .then(({ data: { article } }) => article);
+export const updateVotes = (type, id, vote_count) => {
+    return request
+    .patch(`/${type}/${id}`, { inc_votes: vote_count })
+    .then(({ data }) => data);
+  };
+
+export const insertItem = (newItem, article_id) => {
+    let path = '/articles';
+    if (article_id) path += `/${article_id}/comments`;
+    return request.post(path, newItem).then(({ data }) => {
+        return data;
+    })
+}
+
+export const insertTopic = ( newTopic ) => {
+    return request.post( '/topics', newTopic ).then( ( { data } ) => {
+        return data;
+    })
 }

@@ -3,8 +3,9 @@ import { Router } from '@reach/router';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import ArticlesList from './components/ArticlesList'
-import ArticlePage from './components/ArticlePage';
-import TopicsList from './components/TopicsList';
+import ArticlePage from './components/pages/ArticlePage';
+import TopicsList from './components/pages/TopicsList';
+import NewArticle from './components/forms/AddArticle';
 
 function App() {
   return (
@@ -12,10 +13,12 @@ function App() {
       <Header />
       <Navbar />
       <Router className='Body'>
-        <ArticlesList path='/'/>
+        <ArticlesList path='/' />
+        <ArticlesList path='articles'/>
         <ArticlesList path='/articles/topic/:topic'/>
-        <ArticlePage path='/articles/:article_id'/>
         <ArticlesList path='/users/:username/articles'/>
+        <ArticlePage path='/articles/:article_id/'/>
+        <NewArticle path='/AddArticle' />
         <TopicsList path='/topics' />
       </Router>
     </div>
