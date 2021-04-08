@@ -35,9 +35,9 @@ function ArticleCard( props ) {
                 </Link>
             </p>
             <Votes id={props.article_id} votes={props.votes} type='articles'/>
-            <Link to={`/${props.article_id}/comments`}>
+
                 {props.comment_count} Comments
-            </Link>
+
         </li>
     )
 }

@@ -15,8 +15,9 @@ export default class AddComment extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		const { username, body } = this.state;
+		const newComment = { username, body }
 
-      api.insertItem(this.props.article_id, { username, body } ).then(( { comment } ) => {
+		api.insertComment( this.props.article_id, newComment ).then( ({comment}) => {
 				this.props.addPostedComment(comment)
       })
 	};
@@ -30,7 +31,8 @@ export default class AddComment extends Component {
 					rows='2'
 					placeholder='Write your comment here'
 					onChange={this.handleChange}
-          name='body'
+					name='body'
+					id='body'
           value={body}
 				/>
 				<br/>
