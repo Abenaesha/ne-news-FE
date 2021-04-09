@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from '@reach/router';
 import * as api from '../utils/api';
+import SignIn from './forms/signIn';
 
 class Navbar extends Component {
     state = {
@@ -21,6 +22,7 @@ class Navbar extends Component {
         if (isLoading) return <p>Loading...</p>
         return (
             <nav className='Navbar'>
+                <SignIn />
                 <Link to={'/'}>
                     ARTICLES
                 </Link>

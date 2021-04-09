@@ -61,6 +61,41 @@
   margin: 20px auto;
 }
 
+.signed-in {
+  width: 25%;
+  border: 2px solid rosybrown;
+  border-color: bisque;
+  /* margin: 20px auto; */
+}
+.user--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.user{
+  margin: 0 auto;
+}
+.avatar-pic {
+  height: 50px;
+  width: 500px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.signin-form {
+  border: 2px solid bisque;
+  border-color: burlywood;
+  margin: 0 auto;
+}
+
+.form--container {
+  padding: 10px;
+  background-color: rgb(237, 241, 233);
+}
+
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

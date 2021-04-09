@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../../utils/api';
+import { UserContext } from '../UserContext';
 
 class AddArticle extends Component {
 	state = {
@@ -9,6 +10,7 @@ class AddArticle extends Component {
 		topic: '',
 		topics: [],
 	};
+	static contextType = UserContext;
 
 	componentDidMount() {
 		api.fetchTopics().then((topics) => {
@@ -23,18 +25,20 @@ class AddArticle extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		const { title, author, body, topic } = this.state;
-		if ((title, author, body, topic)) {
-			const newItem = { title, author, body, topic };
-			api.insertItem(newItem).then((newArticle) => {
+		const { title, body, topic } = this.state;
+		const [ user ] = this.context;
+		if (title && user && body && topic) {
+			const newArticle = { title, author: user, body, topic };
+			api.insertItem(newArticle).then((newArticle) => {
 				console.log(newArticle);
 			});
 		}
 	};
 
 	render() {
-		const { title, body, topics } = this.state;
-		console.log(title, body, topics);
+		const { title, body, topics, topic } = this.state;
+		const disabled = !title || !body || !topic;
+    const [user] = this.context;
 		return (
 			<form type='submit' className='AddArticle' onSubmit={this.handleSubmit}>
 				<select onChange={this.handleChange} id='topic' name='topic'>
@@ -71,7 +75,8 @@ class AddArticle extends Component {
 					value={body}
 				/>
 				<br/>
-				<button>Post Article</button>
+				<button disabled={disabled}>Post Article</button>
+				{!user && <p>sign in to post</p>}
 			</form>
 		);
 	}

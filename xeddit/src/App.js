@@ -6,9 +6,11 @@ import ArticlesList from './components/ArticlesList'
 import ArticlePage from './components/pages/ArticlePage';
 import TopicsList from './components/pages/TopicsList';
 import NewArticle from './components/forms/AddArticle';
+import { UserProvider } from './components/UserContext';
 
 function App() {
   return (
+    <UserProvider>
     <div className="App">
       <Header />
       <Navbar />
@@ -22,6 +24,7 @@ function App() {
         <TopicsList path='/topics' />
       </Router>
     </div>
+    </UserProvider>
   );
 }
 

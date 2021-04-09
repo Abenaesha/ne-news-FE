@@ -10,15 +10,15 @@ export const fetchTopics = () => {
 	});
 };
 
-export const fetchUsers = () => {
+export const fetchAllUsers = () => {
 	return request.get('/users').then(({ data: { users } }) => {
 		return users;
 	});
 };
 
 export const fetchUser = (username) => {
-	return request.get(`/users/${username}`).then(({ data: { users } }) => {
-		return users;
+	return request.get(`/users/${username}`).then(({ data: { user } }) => {
+		return user;
 	});
 };
 
@@ -65,9 +65,9 @@ export const insertItem = (article_id, newItem) => {
 		return data;
 	});
 };
-export const insertComment = (article_id, newItem) => {
-	return request.post(`/articles/${article_id}/comments`, newItem).then(({ data }) => {
-		return data;
+export const insertComment = (article_id, newComment) => {
+	return request.post(`/articles/${article_id}/comments`, newComment).then(({ data: {comment} }) => {
+		return comment;
 	});
 };
 
@@ -84,3 +84,7 @@ export const fetchItemCount = (type, topic, author, article_id) => {
 		.get(path, { params: { topic, author, limit: 1000 } })
 		.then(({ data }) => data[type].length);
 };
+
+export const deleteItem = ( type, id ) => {
+	return request.delete(`/${type}/${id}`)
+}

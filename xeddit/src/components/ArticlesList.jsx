@@ -3,6 +3,7 @@ import ArticleCard from './cards/ArticleCard';
 import * as api from '../utils/api';
 import AddArticle from './forms/AddArticle';
 import Pagination from './Pagination';
+import SortBy from './SortBy';
 
 class ArticlesList extends Component {
 	state = {
@@ -71,9 +72,21 @@ class ArticlesList extends Component {
 		});
 	};
 
+	removeArticleFromLocal = (article_id) => {
+		this.setState(({ articles }) => {
+			const newArticles = articles.filter(
+				(article) => article.article_id !== article_id
+			);
+			return {
+				articles: newArticles,
+			};
+		});
+	};
+
 	render() {
 		const { articles, isLoading, order, page, showAddArticle } = this.state;
 		const { topic, username } = this.props;
+		const noArticles = !articles.length;
 		if (isLoading) return <p>Loading...</p>;
 		return (
 			<main className='ArticlesList'>
@@ -81,7 +94,7 @@ class ArticlesList extends Component {
 					{this.props.topic ? this.props.topic.toUpperCase() : 'ALL ARTICLES'}
 				</h2>
 				{this.props.username ? <h4>posted by: {this.props.username}</h4> : null}
-				<label>
+				{/* <label>
 					Sort By:
 					<select onChange={this.handleChange} name='sort_by'>
 						<option value='created_at'>Date</option>
@@ -94,25 +107,56 @@ class ArticlesList extends Component {
 				</label>{' '}
 				<button onClick={this.toggleAddArticle} aria-label='toggle-add-article'>
 					New Article
-				</button>
-				<Pagination
-					page={page}
-					changePage={this.changePage}
-					type='articles'
-					topic={topic}
-					author={username}
-				/>
+				</button> */}
+				<section className='article-buttons'>
+					<SortBy
+						order={order}
+						handleChange={this.handleChange}
+						handleOrder={this.handleOrder}
+					/>{' '}
+					<button
+						onClick={this.toggleAddArticle}
+						aria-label='toggle-add-article'>
+						New Article
+						<i className='fas fa-plus'></i>
+					</button>
+					<Pagination
+						page={page}
+						changePage={this.changePage}
+						type='articles'
+						topic={topic}
+						author={username}
+					/>
+				</section>
 				{showAddArticle && (
 					<AddArticle
 						topic={this.props.topic}
 						updateArticles={this.updateArticles}
 					/>
 				)}
+				{noArticles && (
+					<p>No Articles yet, Be the first person to post an article?</p>
+				)}
 				<ul>
 					{articles.map((article) => {
-						return <ArticleCard key={article.article_id} {...article} />;
+						return (
+							<ArticleCard
+								key={article.article_id}
+								{...article}
+								removeArticleFromLocal={this.removeArticleFromLocal}
+							/>
+						);
 					})}
 				</ul>
+				{!noArticles && (
+					<Pagination
+						page={page}
+						changePage={this.changePage}
+						type='articles'
+						topic={topic}
+						author={username}
+					/>
+				)}
 			</main>
 		);
 	}
