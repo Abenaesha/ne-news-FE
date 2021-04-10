@@ -62,10 +62,10 @@
 }
 
 .signed-in {
-  width: 25%;
+  width: 90%;
   border: 2px solid rosybrown;
   border-color: bisque;
-  /* margin: 20px auto; */
+  margin: 20px auto;
 }
 .user--container {
   display: flex;
@@ -74,11 +74,11 @@
 }
 
 .user{
-  margin: 0 auto;
+  margin-top: 40px;
 }
 .avatar-pic {
-  height: 50px;
-  width: 500px;
+  height: 100px;
+  width: 100px;
   border-radius: 50%;
   object-fit: contain;
   margin-right: 20px;
@@ -87,13 +87,9 @@
 .signin-form {
   border: 2px solid bisque;
   border-color: burlywood;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
-.form--container {
-  padding: 10px;
-  background-color: rgb(237, 241, 233);
-}
 
 
 /* .App-logo {

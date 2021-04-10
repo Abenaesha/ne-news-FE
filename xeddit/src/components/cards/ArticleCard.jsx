@@ -16,7 +16,7 @@ function ArticleCard(props) {
 		votes,
 		removeArticleFromLocal,
 	} = props;
-	const data = new Date(created_at);
+	const data = new Date( created_at );
 	let bodyLen = body;
 	if (bodyLen.length > 50) {
 		bodyLen = bodyLen.slice(0, 50);

@@ -19,11 +19,12 @@ export default class AddComment extends Component {
 		const { body } = this.state;
 		const [user] = this.context;
 		if (user && body) {
-			const comment = { username: user, body };
+			const newItem = { username: user, body };
 			api
-				.insertComment(this.props.article_id, comment)
-				.then((comment) => {
-					this.props.addCommentToLocal(comment);
+				.insertItem(newItem, this.props.article_id)
+				.then( ( {newComment} ) => {
+					console.log(newComment)
+					this.props.addCommentToLocal(newComment);
 					this.setState({ body: '' });
 				});
 		}

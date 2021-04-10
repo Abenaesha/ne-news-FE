@@ -44,9 +44,9 @@ export const fetchArticlesById = (article_id) => {
 		});
 };
 
-export const fetchCommentsByArticleId = (article_id) => {
+export const fetchCommentsByArticleId = (article_id, sort_by, order, page) => {
 	return request
-		.get(`/articles/${article_id}/comments`)
+		.get(`/articles/${article_id}/comments`, { params: { sort_by, order, p: page}})
 		.then(({ data: { comments } }) => {
 			return comments;
 		});
@@ -58,18 +58,18 @@ export const updateVotes = (type, id, vote_count) => {
 		.then(({ data }) => data);
 };
 
-export const insertItem = (article_id, newItem) => {
+export const insertItem = (newItem, article_id) => {
 	let path = '/articles';
 	if (article_id) path += `/${article_id}/comments`;
 	return request.post(path, newItem).then(({ data }) => {
 		return data;
 	});
 };
-export const insertComment = (article_id, newComment) => {
-	return request.post(`/articles/${article_id}/comments`, newComment).then(({ data: {comment} }) => {
-		return comment;
-	});
-};
+// export const insertComment = (article_id, newComment) => {
+// 	return request.post(`/articles/${article_id}/comments`, newComment).then(({ data: {comment} }) => {
+// 		return comment;
+// 	});
+// };
 
 export const insertTopic = (newTopic) => {
 	return request.post('/topics', newTopic).then(({ data }) => {

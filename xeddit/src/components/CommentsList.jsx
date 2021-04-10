@@ -12,7 +12,7 @@ function CommentsList({
 	return (
 		<section className='comments-section'>
 			{showAddComment && (
-        <AddComment
+				<AddComment
           article_id={article_id}
 					addCommentToLocal={addCommentToLocal}
 				/>

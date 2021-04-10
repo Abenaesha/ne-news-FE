@@ -6,8 +6,7 @@ class AddArticle extends Component {
 	state = {
 		title: '',
 		body: '',
-		author: 'tickle122',
-		topic: '',
+		topic: this.props.topic || '',
 		topics: [],
 	};
 	static contextType = UserContext;
@@ -28,9 +27,10 @@ class AddArticle extends Component {
 		const { title, body, topic } = this.state;
 		const [ user ] = this.context;
 		if (title && user && body && topic) {
-			const newArticle = { title, author: user, body, topic };
-			api.insertItem(newArticle).then((newArticle) => {
-				console.log(newArticle);
+			const newItem = { title, author: user, body, topic };
+			api.insertItem( newItem ).then( ( {article} ) => {
+				this.props.updateArticles(article)
+				this.setState({title: '', body: ''})
 			});
 		}
 	};
@@ -41,8 +41,9 @@ class AddArticle extends Component {
     const [user] = this.context;
 		return (
 			<form type='submit' className='AddArticle' onSubmit={this.handleSubmit}>
+				{topic ? <h4>Create new article on {topic}</h4> : null}
 				<select onChange={this.handleChange} id='topic' name='topic'>
-					<option value={topics}>Select Topic</option>
+				<option value="">{topic ? "Change" : "Select"} Topic</option>
 					{topics.map((topic) => {
 						return (
 							<option key={topic.slug} value={topic.slug}>

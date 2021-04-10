@@ -20,9 +20,9 @@ class ArticlesList extends Component {
 	}
 
 	componentDidUpdate(prevProps) {
-		const { topic, page } = this.props;
-		if (topic !== prevProps.topic || page !== prevProps.page) {
-			this.setState({ isLoading: true });
+		const { topic } = this.props;
+		if (topic !== prevProps.topic) {
+			this.setState({ isLoading: true, sort_by: 'created_at', order: 'desc' });
 			this.getArticles();
 		}
 	}
@@ -31,7 +31,7 @@ class ArticlesList extends Component {
 		const { sort_by, order, page } = this.state;
 		api
 			.fetchArticles(topic, username, sort_by, order, page)
-			.then((articles) => {
+			.then( ( articles ) => {
 				this.setState({ articles, isLoading: false });
 			});
 	};
