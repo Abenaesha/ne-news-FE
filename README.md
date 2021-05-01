@@ -11,11 +11,11 @@ This webapp is Reddit replica which serves news articles and comments to the use
 
 ## Frontend webiste
 
-The simplest way to view and interact with my website, is to look at the hosted version online. You can access this at: []
+The simplest way to view and interact with my website, is to look at the hosted version online. You can access this at: [website](https://xeddit.netlify.app/)
 
 ## Backend API server
 
-Requests to the API can be made as endpoints on the URL with an example of a list of all endpoints [https://reshare-x.herokuapp.com/api]. Backend repository can be found at: [https://github.com/Abenaesha/nc-news-BE]
+Requests to the API can be made as endpoints on the URL with an example of a list of all endpoints [API server](https://reshare-x.herokuapp.com/api). Backend repository can be found at: [Backend repo](https://github.com/Abenaesha/nc-news-BE)
 
 
 ## To get started
