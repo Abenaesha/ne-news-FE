@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../../utils/api';
 import { UserContext } from '../UserContext';
-
 export default class AddComment extends Component {
 	state = {
 		body: '',
@@ -23,7 +22,6 @@ export default class AddComment extends Component {
 			api
 				.insertItem(newItem, this.props.article_id)
 				.then( ( {newComment} ) => {
-					console.log(newComment)
 					this.props.addCommentToLocal(newComment);
 					this.setState({ body: '' });
 				});

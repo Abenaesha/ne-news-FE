@@ -28,9 +28,10 @@ export const fetchUserByUsername = (username) => {
 	});
 };
 
-export const fetchArticles = (topic, author, sort_by, order, page) => {
+export const fetchArticles = (topic, author, sort_by, order, p) => {
+	console.log(sort_by, p)
 	return request
-		.get('/articles', { params: { topic, author, sort_by, order, p: page } })
+		.get('/articles', { params: { topic, author, sort_by, order, p} })
 		.then(({ data: { articles } }) => {
 			return articles;
 		});
@@ -44,9 +45,9 @@ export const fetchArticlesById = (article_id) => {
 		});
 };
 
-export const fetchCommentsByArticleId = (article_id, sort_by, order, page) => {
+export const fetchCommentsByArticleId = ( article_id, p, sort_by, order) => {
 	return request
-		.get(`/articles/${article_id}/comments`, { params: { sort_by, order, p: page}})
+		.get(`/articles/${article_id}/comments`, { params: { p, sort_by, order}})
 		.then(({ data: { comments } }) => {
 			return comments;
 		});
@@ -58,10 +59,11 @@ export const updateVotes = (type, id, vote_count) => {
 		.then(({ data }) => data);
 };
 
-export const insertItem = (newItem, article_id) => {
+export const insertItem = (comment, article_id) => {
 	let path = '/articles';
+	console.log(comment)
 	if (article_id) path += `/${article_id}/comments`;
-	return request.post(path, newItem).then(({ data }) => {
+	return request.post( path, comment ).then( ( { data } ) => {
 		return data;
 	});
 };

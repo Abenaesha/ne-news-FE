@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import * as api from '../../utils/api';
-import CommentsList from '../CommentsList';
-import Votes from '../Votes';
-import Delete from '../Delete';
-import Deleted from '../Deleted';
-import Pagination from '../Pagination';
-import SortBy from '../SortBy';
-import { UserContext } from '../UserContext';
-//import UserContext from '../UserContext'
-
+import React, {Component} from 'react'
+import * as api from '../../utils/api'
+import CommentsList from '../CommentsList'
+import Votes from '../Votes'
+import Delete from '../Delete'
+import Deleted from '../Deleted'
+import Pagination from '../Pagination'
+import SortBy from '../SortBy'
+import {UserContext} from '../UserContext'
+import {StyledArticle} from '../../styles/ArticleStyle'
+import {Link} from '@reach/router'
 class ArticlePage extends Component {
 	state = {
 		article: {},
@@ -20,76 +20,86 @@ class ArticlePage extends Component {
 			? this.props.location.state.loadComments
 			: false,
 		deleted: false,
-	};
+		errMessage: '',
+	}
 
-	static contextType = UserContext;
+	static contextType = UserContext
 
 	componentDidMount() {
-		const { article_id } = this.props;
-		const { page, loadComments } = this.state;
-		api.fetchArticlesById(article_id).then((article) => {
-			this.setState({ article, isLoading: false });
-		});
+		const {article_id} = this.props
+		const { page, loadComments } = this.state
+		api
+			.fetchArticlesById( article_id )
+			.then( ( article ) => {
+				this.setState( { article, isLoading: false } );
+			} )
+			.catch( ( { response: { data: { msg } } } ) =>
+				this.setState( { errMessage: msg, isLoading: false } )
+			);
 		if (loadComments) {
-			this.displayComments(page);
-		} else this.setState({ comments: [] });
+			this.displayComments(page)
+		} else this.setState({comments: []})
 	}
 
 	componentDidUpdate = () => {
-		const { comments, loadComments, p } = this.state;
+		const { comments, loadComments, page } = this.state
 		if (!comments.length && loadComments) {
-			this.displayComments(p);
+			this.displayComments(page)
 		} else if (comments.length && !loadComments) {
-			this.setState({ comments: [] });
+			this.setState({comments: []})
 		}
-	};
-	displayComments = (page) => {
-		const { article_id } = this.props;
-		const { sort_by, order } = this.state;
+	}
+	displayComments = ( page ) => {
+		const {article_id} = this.props
+		const { sort_by, order} = this.state
 		api
 			.fetchCommentsByArticleId(article_id, page, sort_by, order)
-			.then((comments) => {
-				this.setState({ comments: comments });
-			});
-	};
+			.then((comments) => 
+				this.setState((prev) => {
+					return {comments: comments}
+				})
+			).catch((err) => this.setState({ errMessage: err }));
+	}
+
+
+
+	handleChange = ({ target: { name, value } }) => {
+		this.setState({[name]: value}, () => this.displayComments())
+	}
 
 	handleOrder = () => {
 		this.setState(
-			({ order }) => {
+			( { order } ) => {
+				console.log(order)
 				if (order === 'asc') {
-					return { order: 'desc' };
+					return {order: 'desc'}
 				} else {
-					return { order: 'asc' };
+					return {order: 'asc'}
 				}
 			},
 			() => this.displayComments()
-		);
-	};
+		)
+	}
 
-	handleChange = (e) => {
-		const { name, value } = e.target;
-		this.setState({ [name]: value }, () => this.displayComments());
-	};
-
-	changePage = (nextPage) => {
+	changePage = ( nextPage ) => {
 		this.setState(
-			({ page }) => {
-				return { page: page + nextPage };
+			( { page } ) => {
+				return {page: page + nextPage}
 			},
 			() => this.displayComments(this.state.page)
-		);
-	};
+		)
+	}
 
 	toggleComments = () => {
-		this.setState(({ loadComments }) => {
-			return { loadComments: !loadComments };
-		});
-	};
+		this.setState(({loadComments}) => {
+			return {loadComments: !loadComments}
+		})
+	}
 
 	addCommentToLocal = (comment) => {
-		const { comments } = this.state;
-		if (!comments.length) this.toggleComments();
-		this.setState(({ comments, article }) => {
+		const {comments} = this.state
+		if (!comments.length) this.toggleComments()
+		this.setState(({comments, article}) => {
 			return {
 				comments: [comment, ...comments],
 				article: {
@@ -97,34 +107,34 @@ class ArticlePage extends Component {
 					comment_count: article.comment_count + 1,
 				},
 				loadComments: true,
-			};
-		});
-	};
+			}
+		})
+	}
 
 	removeCommentFromLocal = (comment_id) => {
-		this.setState(({ comments, article }) => {
+		this.setState(({comments, article}) => {
 			const newComments = comments.filter(
 				(comment) => comment.comment_id !== comment_id
-			);
+			)
 			return {
 				comments: newComments,
 				article: {
 					...article,
 					comment_count: article.comment_count - 1,
 				},
-			};
-		});
-	};
+			}
+		})
+	}
 
 	toggleAddComment = () => {
-		this.setState(({ showAddComment }) => {
-			return { showAddComment: !showAddComment };
-		});
-	};
+		this.setState(({showAddComment}) => {
+			return {showAddComment: !showAddComment}
+		})
+	}
 
 	redirect = () => {
-		this.setState({ deleted: true });
-	};
+		this.setState({deleted: true})
+	}
 
 	render() {
 		const {
@@ -135,18 +145,20 @@ class ArticlePage extends Component {
 			deleted,
 			page,
 			order,
-		} = this.state;
-		const [user] = this.context;
-		const isAuthor = article.author === user;
-		if (isLoading) return <p>Loading...</p>;
-		if (deleted) return <Deleted />;
+		} = this.state
+		const [user] = this.context
+		const isAuthor = article.author === user
+		if (isLoading) return <p>Loading...</p>
+		if (deleted) return <Deleted />
 		return (
-			<main className='article-page'>
+			<StyledArticle>
 				<article>
-					<h1>{article.topic.toUpperCase()}</h1>
-					<h3>{article.title}</h3>
+					<h1>{article.topic}</h1>
+					<h3>{article.title.toUpperCase()}</h3>
 					<p>{article.body}</p>
-					<h5 className='author'>By: {article.author}</h5>
+					<Link to={`/users/${article.author}/articles`} className='author'>
+						by: {article.author}
+					</Link>
 					{isAuthor ? (
 						<Delete
 							type='articles'
@@ -161,6 +173,7 @@ class ArticlePage extends Component {
 							type='articles'
 						/>
 					)}
+					<section className="comment-buttons">
 					<button onClick={this.toggleComments}>
 						{article.comment_count} Comments
 					</button>
@@ -183,8 +196,9 @@ class ArticlePage extends Component {
 					<button
 						onClick={this.toggleAddComment}
 						aria-label='toggle-add-comment'>
-						New Comment
+								New Comment
 					</button>
+					</section>
 					<CommentsList
 						comments={comments}
 						article_id={article.article_id}
@@ -193,9 +207,9 @@ class ArticlePage extends Component {
 						showAddComment={showAddComment}
 					/>
 				</article>
-			</main>
-		);
+			</StyledArticle>
+		)
 	}
 }
 
-export default ArticlePage;
+export default ArticlePage

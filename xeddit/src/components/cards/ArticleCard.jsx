@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from '@reach/router';
-import Votes from '../Votes';
-import Delete from '../Delete';
-import { UserContext } from '../UserContext';
+import React from 'react'
+import {Link} from '@reach/router'
+import Votes from '../Votes'
+import Delete from '../Delete'
+import {UserContext} from '../UserContext'
+import './ArticleCard.css'
 
 function ArticleCard(props) {
 	const {
@@ -15,38 +16,44 @@ function ArticleCard(props) {
 		title,
 		votes,
 		removeArticleFromLocal,
-	} = props;
-	const data = new Date( created_at );
-	let bodyLen = body;
+	} = props
+
+	const date = new Date(created_at)
+	let bodyLen = body
 	if (bodyLen.length > 50) {
-		bodyLen = bodyLen.slice(0, 50);
-		bodyLen += '...';
+		bodyLen = bodyLen.slice(0, 50)
+		bodyLen += '...'
 	}
 
-	const [user] = React.useContext(UserContext);
-	const isAuthor = author === user;
+	const [user] = React.useContext(UserContext)
+
+	const isAuthor = author === user
 
 	return (
 		<li className='article-card'>
 			<Link
 				to={`/articles/topic/${topic}`}
 				className='topic'
-				state={{ loadComments: false }}>
+				state={{loadComments: false}}>
 				{topic.toUpperCase()}
 			</Link>
 			<Link
 				className='title'
 				to={`/articles/${article_id}`}
-				state={{ loadComments: false }}>
+				state={{loadComments: false}}>
 				<h3>{title}</h3>
 			</Link>
-			<p className='data'>{data.toLocaleString()}</p>
-			<p className='boduLen'>{bodyLen}</p>
-			<p>
+
+			<p className='date'>{date.toLocaleString()}</p>
+			<Link
+				className='synop'
+				to={`/articles/${article_id}`}
+				state={{loadComments: false}}>
+				<p>{bodyLen}</p>
+			</Link>
+			<p className='author'>
 				By:
-				<Link to={`/users/${author}/articles`} className='author'>
-					{author}
-				</Link>
+				<Link to={`/users/${author}/articles`}>{author}</Link>
 			</p>
 			{isAuthor ? (
 				<Delete
@@ -61,11 +68,11 @@ function ArticleCard(props) {
 			<Link
 				className='article-card-comments'
 				to={`/articles/${article_id}`}
-				state={{ loadComments: true }}>
+				state={{loadComments: true}}>
 				{comment_count} Comments
 			</Link>
 		</li>
-	);
+	)
 }
 
-export default ArticleCard;
+export default ArticleCard

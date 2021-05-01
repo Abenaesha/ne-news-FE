@@ -8,7 +8,7 @@ export default function SortBy({
 }) {
 	return (
 		<label className='sort-by'>
-			Sort By:
+			{/* Sort By: */}
 			<select onChange={handleChange} name='sort_by'>
 				<option value='created_at'>Date</option>
 				<option value='votes'>Votes</option>
@@ -16,11 +16,9 @@ export default function SortBy({
 			</select>
 			<button aria-label='toggle-order-of-items' onClick={handleOrder}>
 				{order === 'desc' ? (
-					<i className='fas fa-chevron-down'></i>,
-					<p>v</p>
+					<i className='fas fa-chevron-down'></i>
 				) : (
-						<i className='fas fa-chevron-up'></i>,
-						<p>^</p>
+						<i className='fas fa-chevron-up'></i>
 				)}
 			</button>
 		</label>

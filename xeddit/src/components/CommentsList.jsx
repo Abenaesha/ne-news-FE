@@ -10,7 +10,7 @@ function CommentsList({
 	showAddComment,
 } ) {
 	return (
-		<section className='comments-section'>
+		<section className='comments-box'>
 			{showAddComment && (
 				<AddComment
           article_id={article_id}

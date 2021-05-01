@@ -1,88 +1,32 @@
-# Northcoders News
+# xeddit News 
 
-> ALERT! Please **create your own empty repo** for NC News to avoid later issues with deploying and git histories. You should then use `create-react-app` and set the git remote using `git remote set-url origin your.new.git.url/here`.
+this website project is part of the frontend module that was built as a closing chapter of a Full-Stack Web Development Bootcamp.
+## Overview
 
-Northcoders News is a social news aggregation, web content rating, and discussion website. Think something along the lines of [Reddit](https://www.reddit.com/).
+The sole aim of this project was to learn how to practice React.js and interact with database like PostgresSQL, and using different tenchologies like react life-cycle, react styled-component. Also, a fully built API server from backend module was used to build to the frontend side and form a full engaging webapp.
 
-Northcoders News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
+## webapp functionality
 
-This review sprint should consolidate your understanding of making a [C.R.U.D](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) application from a front end perspective.
+This webapp is Reddit replica which serves news articles and comments to the user, along with metadata relating to those items. One of the key features is letting the users to post articles, delete comments on articles.
 
- _Note: You will come across a Cross-Origin-Resource-Sharing error once you start fetching data from your back-end API, which will need a slight update: [Express CORS Middleware](https://expressjs.com/en/resources/middleware/cors.html)_
+## Frontend webiste
 
-## Objectives
+The simplest way to view and interact with my website, is to look at the hosted version online. You can access this at: []
 
-1. Pull together all the front-end skills, technologies and best practises you have learnt.
-2. Make asynchronous API calls to your own server.
-3. Use HTTP request types to interact with your backend, and HTTP response codes to update your UI accordingly.
+## Backend API server
 
-## What to do
+Requests to the API can be made as endpoints on the URL with an example of a list of all endpoints [https://reshare-x.herokuapp.com/api]. Backend repository can be found at: [https://github.com/Abenaesha/nc-news-BE]
 
-Use the generic react-project-checklist as a guide to setting up your app. Here are some project-specific things to bear in mind:
 
-1. Have a look at your API endpoints and at Reddit. Think about what data you have available, and how you will structure your application. What routes will your application have? What articles will you choose to display on the main page?
-2. Think how you will isolate the concerns of your project - the structure of your components, the sourcing of your data, the styling.
-3. What sort of routing does Reddit use? What sort of specificity do you think you will need? Remember, your urls don't have to directly correspond to your api endpoints, but they will provide some guidance.
-4. Think about what data each component will need. Where will it come from? When should components find their own data and when should they load it themselves? Focus on loading a list of articles for your front page first of all.
-5. Consider more complex functionality: how do you want to allow changes to your database? Think about how you will attribute users to posted comments etc. How will you know what comments/articles a user should be allowed to delete? How about sorting data, or paginating responses? A good starting point would be to pick a single user and assuming that all new articles and comments are being posted by that user.
-6. How are you going to make this a fluid and engaging experience for users, so they want to come back for more?
+## To get started
 
-## 'Must Have' User Stories
+If you wish to start viewing the project locally, you will first need to navigate into the directory containing the frontend project; after this you will need to begin installing all the required modules. You can quickly ensure that you have everything installed using npm i in the terminal below, which should install all of the dependencies below, as they are listed in the package.json. My website makes use of:
 
-You should implement the following functionality in your website. Check the lecture calendar to see when any new topics will be covered, but feel free to have a go at them beforehand as well!
+React
+Axios
+@reach/router and these should all be installed using the above command. You also will need to ensure that you have node version 11.12.0 or greater (you can check your node version by typing node --version into your terminal).
+In order to run the source code in this repo yourself, you'll first need to clone the repo. 
 
-**Before moving onto the 'if time' and 'extra credit' sections of this readme, follow go to the Deployment section bellow, and then submit your code for review! Please send a link to both your GitHub project repository and your hosted website to your reviewer** 😀
+## Hosting on local port
 
-**As a user, I should be able to...**
-
-1. view a list of all articles
-2. view a page for each topic with a list of related articles.
-3. view an individual article.
-4. view an individual article's comments.
-5. sort articles by:
-   - date created
-   - comment_count
-   - votes
-6. post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
-7. delete my own comments (as a default logged in user. e.g. 'jessjelly').
-8. vote on an article and immediately see the change.
-9. vote on a comment and immediately see the change.
-
-**Error-handling: As a user, I should...**
-
-10. see a 404 error if I go on a non-existent path/a path for a non-existent article/topic.
-11. see a 400 error if I go on a invalid article ID.
-12. not be allowed to post a comment if I have not filled in all of the form boxes.
-
-**As a hiring partner, I should be able to...**
-
-13. use the site on my mobile without sacrificing style or functionality (as I may not have my laptop nearby).
-14. follow the readme instructions to easily run the project locally.
-15. find a link to the hosted version of the project in the readme. (use a placeholder if not yet hosted!)
-16. find a link to the back-end repository of the project in the readme.
-17. find a link to the hosted version of the back-end project in the readme.
-
-## _If time, and if you have implemented it in your back-end API..._
-
-**As a user, I should be able to...**
-
-18. navigate over pages of articles (e.g. using pagination or infinite scroll).
-19. navigate over pages of comments (e.g. using pagination or infinite scroll).
-20. view a list of all articles written by any specific user.
-21. post a new article to an existing topic.
-22. delete my own articles.
-
-## Deployment
-
-There are many ways to deploy a React application. The `create-react-app` docs go into detail on some of the options: https://facebook.github.io/create-react-app/docs/deployment
-
-We recommend Netlify. Check out the `netlify-deployment.md` file in this repo for a step-by-step guide!
-
-## Extra credit - what else do you think would be good for a user to be able to do, here are a couple of suggestions:
-
-1. As a user, I should be able to see which users have been most active adding articles and comments
-2. As a user, I should be able to sort the users by how popular they are based on an aggregation of their article and comment vote counts
-
-## Important
-
-This sprint is among the ones we'll ask you to complete in order to put you forward for jobs. Put a little bit of love into it! :) <3
+Should you wish to run the project locally, having taken the above step to install the appropriate node modules, type npm start into your terminal to begin running the website in your browser.

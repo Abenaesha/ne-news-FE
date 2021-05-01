@@ -9,7 +9,8 @@ export default class Pagination extends Component {
 
 	componentDidMount = () => {
 		const { type, topic, author, article_id } = this.props;
-		api.fetchItemCount(type, topic, author, article_id).then((itemCount) => {
+		api.fetchItemCount( type, topic, author, article_id ).then( ( itemCount ) => {
+			
 			const totalPages = Math.ceil(itemCount / 10);
 			this.setState({ totalPages });
 		});
@@ -17,6 +18,7 @@ export default class Pagination extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		const { type, topic, author, article_id } = this.props;
+
 		if (topic !== prevProps.topic || author !== prevProps.author) {
 			api.fetchItemCount(type, topic, author, article_id).then((itemCount) => {
 				const totalPages = Math.ceil(itemCount / 10);
@@ -45,15 +47,14 @@ export default class Pagination extends Component {
 					disabled={page === 1}
 					value='-1'
 					onClick={() => changePage(-1)}
-          >
-          {'<'}
+				>
+					<i className='fas fa-chevron-left'></i>
 				</button>
 				<button
 					value='1'
 					disabled={page === totalPages || totalPages === 0}
 					onClick={() => changePage(1)}
           >
-          {'>'}
 					<i className='fas fa-chevron-right'></i>
 				</button>
 			</section>
